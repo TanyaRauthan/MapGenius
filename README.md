@@ -119,15 +119,3 @@ Run the development server:
 Bash
 
 npm start
-# Or if you use yarn:
-yarn start
-This will start the development server, and your React app (including the map component) should open in your browser.  You'll then be able to interact with it, enter coordinates, and see the map.
-
-Important Considerations:
-
-API Keys (if needed): If you eventually use a mapping service that requires API keys (like Google Maps), you'll need to configure those in your project. OpenStreetMap, which the code uses, does not require API keys for basic usage.
-Pathfinding: The pathfinding logic is still a placeholder. You must replace it with a real pathfinding algorithm if you want the map to calculate routes.
-Component Library: Ensure the UI components you are using are correctly installed and imported into your project. The code I provided assumes a specific structure for your UI library, so adjust as needed. If you're using a different library, the component names and props will be different.
-Geocoding: The code uses react-geolocated for getting the user's location. Make sure the user grants location permissions in their browser.
-Error Handling: The provided code has basic functionality but could be improved with better error handling (e.g., handling invalid coordinate input, cases where geolocation fails, etc.).
-By following these steps, you should be able to preview and test the map component in your local development environment.  Remember to replace the placeholder pathfinding and time/cost calculations with your own logic.
