@@ -24,7 +24,7 @@ Step 1: Clone the Repository
 sh
 Copy
 Edit
-git clone https://github.com/yourusername/MapGenius.git
+git clone https://github.com/TanyaRauthan/MapGenius.git
 cd MapGenius
 Step 2: Install Dependencies
 sh
@@ -49,7 +49,7 @@ Copy
 Edit
 yarn dev
 Step 4: Open in Browser
-Visit http://localhost:3000 to access MapGenius.
+
 
 How to Use
 Select Locations
@@ -85,3 +85,49 @@ Future Enhancements
 ✔️ Add real-world travel cost estimations based on flight and transport data.
 ✔️ Improve UI/UX with advanced mapping libraries (Leaflet.js, Google Maps API).
 ✔️ Integrate user authentication for saved routes
+
+Set up a React project: If you don't already have one, create a new React project using Create React App or a similar tool:
+
+Bash
+
+npx create-react-app my-map-app
+cd my-map-app
+Install dependencies: Install the necessary packages:
+
+Bash
+
+npm install react-leaflet leaflet react-geolocated
+# Or if you use yarn:
+yarn add react-leaflet leaflet react-geolocated
+You'll also need your UI component library (the one that provides Card, Input, Select, Button, etc.).  I can't know which library you're using, but it might be something like shadcn/ui, material-ui, antd, or similar. Install that as well, following its instructions.  For example, if it's shadcn/ui:
+
+Bash
+
+npx shadcn-ui@latest init
+Replace the contents of src/App.js (or your main component file) with the code I provided: Copy and paste the improved MapGeniusComponent code into your App.js file (or whichever file you want to put it in).
+
+Import your UI components: Make sure you correctly import the UI components (Card, Input, Select, Button, etc.) at the top of your component file. The paths I used in the example /components/ui/... are placeholders.  Adjust these paths to match your project structure.  For instance:
+
+JavaScript
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"  // Example using @ alias
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Button, Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+Run the development server:
+
+Bash
+
+npm start
+# Or if you use yarn:
+yarn start
+This will start the development server, and your React app (including the map component) should open in your browser.  You'll then be able to interact with it, enter coordinates, and see the map.
+
+Important Considerations:
+
+API Keys (if needed): If you eventually use a mapping service that requires API keys (like Google Maps), you'll need to configure those in your project. OpenStreetMap, which the code uses, does not require API keys for basic usage.
+Pathfinding: The pathfinding logic is still a placeholder. You must replace it with a real pathfinding algorithm if you want the map to calculate routes.
+Component Library: Ensure the UI components you are using are correctly installed and imported into your project. The code I provided assumes a specific structure for your UI library, so adjust as needed. If you're using a different library, the component names and props will be different.
+Geocoding: The code uses react-geolocated for getting the user's location. Make sure the user grants location permissions in their browser.
+Error Handling: The provided code has basic functionality but could be improved with better error handling (e.g., handling invalid coordinate input, cases where geolocation fails, etc.).
+By following these steps, you should be able to preview and test the map component in your local development environment.  Remember to replace the placeholder pathfinding and time/cost calculations with your own logic.
